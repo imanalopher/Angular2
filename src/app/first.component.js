@@ -9,13 +9,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var FirstComponent = (function () {
     function FirstComponent() {
+        this.childEvent = new core_1.EventEmitter();
     }
+    FirstComponent.prototype.childKeyUp = function (value) {
+        this.childEvent.emit(value);
+    };
     return FirstComponent;
 }());
 FirstComponent = __decorate([
     core_1.Component({
         selector: 'first-component',
-        template: "<h1>First component</h1>"
+        template: "\n        <h1>First component</h1>\n        <input type=\"text\" #childInput (keyup)=\"childKeyUp(childInput.value)\">\n\n        {{ parentData }}\n    ",
+        inputs: ["parentData"],
+        outputs: ['childEvent']
     })
 ], FirstComponent);
 exports.FirstComponent = FirstComponent;

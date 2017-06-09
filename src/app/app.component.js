@@ -10,24 +10,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'ssdsd';
-        this.url = 'http://lorempixel.com/400/200/';
-        this.one = true;
-        this.two = true;
-        this.colors = ['red', 'blue', 'white'];
     }
-    AppComponent.prototype.toggle = function () {
-        var o = this.one;
-        this.one = this.one != true;
-        this.two = this.two != true;
+    AppComponent.prototype.keyUp = function (f) {
+        console.log(f);
     };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n      <input [(ngModel)]=\"name\">\n            Name : {{ name }}\n      <ul>\n          <li *ngFor=\"let color of colors\">{{ color }}</li>\n      </ul>\n      \n      <p [ngClass]=\"{ classOne:one, classTwo:two }\">Color One</p>\n      \n      <div>\n          <p>{{ one }}</p>\n          <p>{{ two }}</p>\n      </div>\n      \n      <button (click)=\"toggle()\">Toggle</button>\n            <first-component></first-component>",
-        styles: ["\n        .classOne { color: white; }\n        .classTwo { background-color: black; }\n    "]
+        template: "\n      <input type=\"text\" #inputText (keyup)=\"keyUp(inputText.value)\">\n      {{ childData }}\n      <first-component (childEvent) = \"childData = $event\" [parentData]=\"inputText.value\"></first-component>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
