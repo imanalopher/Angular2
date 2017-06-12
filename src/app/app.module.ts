@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import {FirstComponent} from './first.component';
 import { FormsModule } from '@angular/forms';
+import { FormComponent } from "./form.component";
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, FirstComponent ],
+  declarations: [ AppComponent, FirstComponent, FormComponent ],
   providers:    [],
   bootstrap:    [ AppComponent ]
 })

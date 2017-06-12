@@ -6,21 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-///<reference path="first.component.ts"/>
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var FormComponent = (function () {
+    function FormComponent() {
     }
-    AppComponent.prototype.keyUp = function (f) {
-        console.log(f);
+    FormComponent.prototype.onSubmit = function (value) {
+        console.log(value);
     };
-    return AppComponent;
+    return FormComponent;
 }());
-AppComponent = __decorate([
+FormComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n      <input type=\"text\" #inputText (keyup)=\"keyUp(inputText.value)\">\n      {{ childData }}\n      <first-component (childEvent) = \"childData = $event\" [parentData]=\"inputText.value\"></first-component>\n      <form-component></form-component>\n  "
+        selector: 'form-component',
+        templateUrl: './form.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], FormComponent);
+exports.FormComponent = FormComponent;
+//# sourceMappingURL=form.component.js.map
