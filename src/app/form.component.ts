@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
     selector: 'form-component',
@@ -6,8 +7,17 @@ import { Component } from '@angular/core';
 })
 
 export class FormComponent {
+    userForm = new FormGroup({
+        name: new FormControl(),
+        email: new FormControl(),
+        address: new FormGroup({
+            street: new FormControl(),
+            city: new FormControl(),
+            postalcode: new FormControl()
+        })
+    });
 
-    onSubmit(value: any) {
-        console.log(value);
+    onSubmit() {
+        console.log(this.userForm.value);
     }
 }

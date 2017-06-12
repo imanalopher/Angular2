@@ -7,11 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var FormComponent = (function () {
     function FormComponent() {
+        this.userForm = new forms_1.FormGroup({
+            name: new forms_1.FormControl(),
+            email: new forms_1.FormControl(),
+            address: new forms_1.FormGroup({
+                street: new forms_1.FormControl(),
+                city: new forms_1.FormControl(),
+                postalcode: new forms_1.FormControl()
+            })
+        });
     }
-    FormComponent.prototype.onSubmit = function (value) {
-        console.log(value);
+    FormComponent.prototype.onSubmit = function () {
+        console.log(this.userForm.value);
     };
     return FormComponent;
 }());
