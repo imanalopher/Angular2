@@ -1,14 +1,13 @@
 ///<reference path="first.component.ts"/>
 import { Component } from '@angular/core';
+import {EmployeeService} from './employee.service';
 
 @Component({
   selector: 'my-app',
   template: `
-      <input type="text" #inputText (keyup)="keyUp(inputText.value)">
-      {{ childData }}
-      <first-component (childEvent) = "childData = $event" [parentData]="inputText.value"></first-component>
-      <form-component></form-component>
-  `
+      <employee></employee>
+  `,
+    providers: [EmployeeService]
 })
 export class AppComponent {
 

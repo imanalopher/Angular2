@@ -13,6 +13,7 @@ var first_component_1 = require("./first.component");
 var forms_1 = require("@angular/forms");
 var forms_2 = require("@angular/forms");
 var form_component_1 = require("./form.component");
+var employee_component_1 = require("./employee.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,7 +22,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, forms_2.ReactiveFormsModule],
-        declarations: [app_component_1.AppComponent, first_component_1.FirstComponent, form_component_1.FormComponent],
+        declarations: [app_component_1.AppComponent, first_component_1.FirstComponent, form_component_1.FormComponent, employee_component_1.EmployeeComponent],
         providers: [],
         bootstrap: [app_component_1.AppComponent]
     })

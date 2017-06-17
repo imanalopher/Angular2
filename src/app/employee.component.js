@@ -5,24 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-///<reference path="first.component.ts"/>
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./employee.service");
-var AppComponent = (function () {
-    function AppComponent() {
+var EmployeeComponent = (function () {
+    function EmployeeComponent(_employee) {
+        this.employees = [];
+        this.employees = _employee.getEmployees();
     }
-    AppComponent.prototype.keyUp = function (f) {
-        console.log(f);
-    };
-    return AppComponent;
+    return EmployeeComponent;
 }());
-AppComponent = __decorate([
+EmployeeComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n      <employee></employee>\n  ",
-        providers: [employee_service_1.EmployeeService]
-    })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+        selector: 'employee',
+        templateUrl: './employee.component.html'
+    }),
+    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
+], EmployeeComponent);
+exports.EmployeeComponent = EmployeeComponent;
+//# sourceMappingURL=employee.component.js.map
