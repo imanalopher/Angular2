@@ -1,6 +1,6 @@
 <div class="container">
     <h2>User Data</h2>
-    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="form-group">
             <label>Name</label>
             <input type="text" #nameRef required class="form-control" name="name" formControlName="name">

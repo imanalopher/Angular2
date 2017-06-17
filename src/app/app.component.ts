@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    public childData : string;
+    public childData: string;
 
     public keyUp(f: string) {
         console.log(f);
