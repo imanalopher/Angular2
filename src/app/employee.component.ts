@@ -7,9 +7,12 @@ import { EmployeeService } from './employee.service';
 })
 
 export class EmployeeComponent {
-    employees = [];
 
-    constructor(_employee: EmployeeService) {
-        this.employees = _employee.getEmployees();
+    employees: Array<any>;
+
+    constructor(private _employee: EmployeeService) {
+        this._employee.getEmployees()
+            .subscribe(employeeData => this.employees = employeeData);
+        console.log(this.employees);
     }
 }

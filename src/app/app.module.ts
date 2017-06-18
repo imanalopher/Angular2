@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form.component';
 import {EmployeeComponent} from './employee.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule ],
+  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule ],
   declarations: [ AppComponent, FirstComponent, FormComponent, EmployeeComponent ],
   providers:    [],
   bootstrap:    [ AppComponent ]

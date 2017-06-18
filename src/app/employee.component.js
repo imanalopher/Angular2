@@ -13,8 +13,11 @@ var core_1 = require("@angular/core");
 var employee_service_1 = require("./employee.service");
 var EmployeeComponent = (function () {
     function EmployeeComponent(_employee) {
-        this.employees = [];
-        this.employees = _employee.getEmployees();
+        var _this = this;
+        this._employee = _employee;
+        this._employee.getEmployees()
+            .subscribe(function (employeeData) { return _this.employees = employeeData; });
+        console.log(this.employees);
     }
     return EmployeeComponent;
 }());
